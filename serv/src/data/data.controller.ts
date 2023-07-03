@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 import { DataService } from './data.service'
 
 @Controller('data')
@@ -9,7 +9,7 @@ export class DataController {
     return this.dataService.getData()
   }
   @Get('md')
-  getMarkDown(): any {
-    return this.dataService.getMarkDown()
+  getMarkDown(@Query() q): any {
+    return this.dataService.getMarkDown(q)
   }
 }

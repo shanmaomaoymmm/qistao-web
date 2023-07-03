@@ -8,15 +8,16 @@ export class DataService {
       msg: 'success'
     }
   }
-  getMarkDown() {
+  getMarkDown(q: any) {
     return {
       code: 1,
       msg: 'markdown',
-      data: markdown()
+      data: markdown(q)
     }
   }
 }
 
-function markdown() {
-  return 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+function markdown(q: any) {
+  let id = q.id
+  return id
 }
